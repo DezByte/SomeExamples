@@ -4,7 +4,7 @@ public class Lada extends CarAbstract {
 
     public Lada(Double speed, Double tripTime)
     {
-        super("Lada Корыто", speed, tripTime);
+        super("Lada Корыто - седан, цвета баклажан", speed, tripTime);
     }
 
     @Override
