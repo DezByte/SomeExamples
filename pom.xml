@@ -36,11 +36,15 @@
         <!-- Configuration -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <compiler.version>1.6</compiler.version>
 
         <!--Dependencies-->
         <springframework.version>4.2.5.RELEASE</springframework.version>
         <properties.loader.version>1.4</properties.loader.version>
         <logging.log4j.version>2.1</logging.log4j.version>
+
+        <!--Plugins-->
+        <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
 
         <!-- Directory Properties -->
         <resource-test.directory>${project.basedir}/src/test/resources</resource-test.directory>
@@ -83,6 +87,18 @@
                 <filtering>true</filtering>
             </resource>
         </resources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
+                <configuration>
+                    <source>${compiler.version}</source>
+                    <target>${compiler.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 </project>

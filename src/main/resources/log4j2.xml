@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [%-5level] %logger{36} - %msg%n"/>
+        </Console>
+        <!-- logs/${date:dd-MM-yyy_HH-mm-ss}.log or logs/allLogs.log-->
+        <File name="FileLogger" fileName="logs/allLogs.log" append="false">
+            <PatternLayout pattern="%d{dd-MM-yyy HH:mm:ss.SSS} [%t] %-5level - %msg%n" />
+        </File>
+    </Appenders>
+    <Loggers>
+        <Root level="trace">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileLogger" />
+        </Root>
+    </Loggers>
+</configuration>
