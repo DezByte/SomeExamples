@@ -4,7 +4,8 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] [%-5level] %logger{36} - %msg%n"/>
         </Console>
-        <File name="FileLogger" fileName="logs/${date:dd-MM-yyy_HH-mm-ss}.log" append="false">
+        <!-- logs/${date:dd-MM-yyy_HH-mm-ss}.log or logs/allLogs.log-->
+        <File name="FileLogger" fileName="logs/allLogs.log" append="false">
             <PatternLayout pattern="%d{dd-MM-yyy HH:mm:ss.SSS} [%t] %-5level - %msg%n" />
         </File>
     </Appenders>
