@@ -1,24 +1,27 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Test1 {
 
-    public static void main(String[] args)
-    {
+    static final Logger logger = LogManager.getLogger();
 
-        args = new String[] {"Java", "PHP", "Ruby"};
+    public static void main(String[] args) {
 
-        System.out.println("Print all args...");
+        args = new String[]{"Java", "PHP", "Ruby"};
+
+        logger.info("Print all args...");
 
         for (String argument : args) {
-            System.out.println("----");
+            logger.info("----");
 
             char[] chars = argument.toUpperCase().toCharArray();
 
             for (Character charItem : chars) {
-                System.out.println(charItem);
+                logger.info(charItem);
             }
         }
 
-        System.out.println("Finish!");
+        logger.info("Finish!");
 
     }
 

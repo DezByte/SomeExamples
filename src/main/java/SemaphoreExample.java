@@ -1,9 +1,13 @@
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.concurrent.Semaphore;
 
 public class SemaphoreExample {
 
-    public static void main(String[] args)
-    {
+    static final Logger logger = LogManager.getLogger();
+
+    public static void main(String[] args) {
         SemaphoreExample.Card card      = new SemaphoreExample.Card();
         Semaphore             semaphore = new Semaphore(1);
 
@@ -53,9 +57,9 @@ public class SemaphoreExample {
 
             try {
 
-                System.out.printf("%s started...%n", this.name);
+                logger.info("%s started...%n", this.name);
                 this.semaphore.acquire();
-                System.out.printf("%s got access...%n", this.name);
+                logger.info("%s got access...%n", this.name);
 
                 for (int i = 0; i < 10; i++) {
                     if (this.workerType) {
@@ -63,11 +67,11 @@ public class SemaphoreExample {
                     } else {
                         this.card.reduce();
                     }
-                    System.out.printf("%s was changed card to: %d%n", this.name, this.card.getCount());
+                    logger.info("%s was changed card to: %d%n", this.name, this.card.getCount());
                 }
 
                 this.semaphore.release();
-                System.out.printf("%s was finished...%n", this.name);
+                logger.info("%s was finished...%n", this.name);
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
