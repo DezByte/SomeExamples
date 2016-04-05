@@ -11,7 +11,7 @@ public class Example1 {
     public static void main(String[] args)
     {
 
-        List<CarAbstract> cars   = new ArrayList<>();
+        List<CarAbstract> cars   = new ArrayList<CarAbstract>();
         Random                     random = new Random();
 
         for (int i = 0; i < 30; i++) {
