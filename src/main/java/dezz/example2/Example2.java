@@ -60,7 +60,7 @@ public class Example2 {
 
         // так надо
         // завись от интерфеса а не от класса
-        List<Humanoid> humans = new ArrayList<>();
+        List<Humanoid> humans = new ArrayList<Humanoid>();
 
         humans.add(new Student("Kolya"));
         humans.add(new Student("Orest"));
